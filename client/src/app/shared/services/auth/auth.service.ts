@@ -1,10 +1,9 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from "../services/models/user";
+import { User } from "../../services/models/user";
 import firebase from 'firebase/compat/app';
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from "@angular/router";
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

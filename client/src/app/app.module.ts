@@ -10,7 +10,7 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
-import { AuthService } from './shared/services/auth.service';
+import { AuthService } from './shared/services/auth/auth.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 @NgModule({
   declarations: [
