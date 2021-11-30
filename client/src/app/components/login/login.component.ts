@@ -8,22 +8,19 @@ import { AuthService } from 'src/app/shared/services/auth/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  constructor(public authService: AuthService) {}
 
-  constructor(
-    public authService: AuthService
-  ) { }
+  ngOnInit() {}
 
-  ngOnInit() { }
-
-  public signIn(email: string, password: string): void{
+  public signIn(email: string, password: string): void {
     this.authService.signIn(email, password);
   }
 
-  public signOut(){
+  public signOut() {
     this.authService.signOut();
   }
 
-  public googleAuth(): Promise<void>{
+  public googleAuth(): Promise<void> {
     return this.authService.googleAuth();
   }
 }
