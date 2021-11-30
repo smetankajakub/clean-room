@@ -4,13 +4,13 @@ import firebase from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
-  AngularFirestoreDocument,
+  AngularFirestoreDocument
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthService {
   userData: any | null; // Save logged in user data
@@ -19,7 +19,7 @@ export class AuthService {
     email: '',
     displayName: '',
     photoURL: '',
-    emailVerified: false,
+    emailVerified: false
   };
   constructor(
     public firestoreService: AngularFirestore, // Inject Firestore service
@@ -49,10 +49,10 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+      emailVerified: user.emailVerified
     };
     return userRef.set(userData, {
-      merge: true,
+      merge: true
     });
   }
 
@@ -121,13 +121,17 @@ export class AuthService {
 
   // // Send email verfificaiton when new user sign up
   private sendVerificationMail(): Promise<any> {
-    return this.fireAuthService.currentUser.then(u => u?.sendEmailVerification())
-      .then(() => {
-        this.router.navigate(['verify-email']);
-      }, error =>{
-        // TODO: show message
-      })
-    };
+    return this.fireAuthService.currentUser
+      .then((u) => u?.sendEmailVerification())
+      .then(
+        () => {
+          this.router.navigate(['verify-email']);
+        },
+        (error) => {
+          // TODO: show message
+        }
+      );
+  }
 
   // // Reset Forggot password
   // ForgotPassword(passwordResetEmail: any) {

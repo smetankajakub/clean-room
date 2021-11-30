@@ -5,10 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
-  { path: '', 
-    redirectTo: '/sign-in', 
-    pathMatch: 'full' 
-  },
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   {
     path: 'login',
     component: LoginComponent
@@ -25,7 +22,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
