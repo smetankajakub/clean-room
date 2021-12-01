@@ -9,6 +9,12 @@
     "prepare": "cd .. && husky install client/.husky",
     "test": "ng test"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx pretty-quick --staged ng lint ng test",
+      "pre-push": "ng build --aot true"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
